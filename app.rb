@@ -18,12 +18,16 @@ class App < Sinatra::Base
     "Goodbye #{@user_name}"
   end
 
-  get '/multiply/:num1/:num2' do
-    #{}"#{params['splat'].reject(:*)}"
-    @x = params['num1'].to_i
-    @y = params['num2'].to_i
-    @product = @x*@y
-    "#{@x*@y}"
+  # get '/multiply/:num1/:num2' do
+  #  @x = params['num1'].to_i
+  #  @y = params['num2'].to_i
+  #  @product = @x*@y
+  #  "#{@x*@y}"
+  # end
+# I am stubborn and want to splat
+  get '/multiply/*/*' do
+    "#{params['splat'].collect{|x| x.to_i}.inject(:*)}"
   end
+
 
 end
