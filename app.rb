@@ -23,7 +23,7 @@ class App < Sinatra::Base
     @x = params['num1'].to_i
     @y = params['num2'].to_i
     @product = @x*@y
-    "#{@product}"
+    "#{@x*@y}"
   end
 
 end
